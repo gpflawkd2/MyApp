@@ -1,5 +1,5 @@
 # MyApp
-my first ASP.NET Core web page
+ASP.NET Core web page
 
 ## Prerequisites
 + .NET Core 2.1 SDK
