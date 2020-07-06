@@ -21,3 +21,26 @@ D:\Project\2. ASP.NET\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Stude
 D:\Project\2. ASP.NET\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.RazorTargetAssemblyInfo.cs
 D:\Project\2. ASP.NET\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.Views.pdb
 D:\Project\2. ASP.NET\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.csproj.CopyComplete
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.deps.json
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.runtimeconfig.json
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.runtimeconfig.dev.json
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.dll
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.pdb
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.Views.dll
+D:\GitHub\MyApp\MyApp\bin\Debug\netcoreapp2.1\MyApp.Views.pdb
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.csprojAssemblyReference.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.csproj.CoreCompileInputs.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.RazorAssemblyInfo.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.RazorAssemblyInfo.cs
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.AssemblyInfoInputs.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.AssemblyInfo.cs
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.TagHelpers.input.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.TagHelpers.output.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.RazorCoreGenerate.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Student.g.cshtml.cs
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.RazorTargetAssemblyInfo.cache
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.RazorTargetAssemblyInfo.cs
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.Views.pdb
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.dll
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.pdb
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.csproj.CopyComplete

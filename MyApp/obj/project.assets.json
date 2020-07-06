@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\2. ASP.NET\\MyApp\\MyApp\\MyApp.csproj",
+      "projectUniqueName": "D:\\GitHub\\MyApp\\MyApp\\MyApp.csproj",
       "projectName": "MyApp",
-      "projectPath": "D:\\Project\\2. ASP.NET\\MyApp\\MyApp\\MyApp.csproj",
+      "projectPath": "D:\\GitHub\\MyApp\\MyApp\\MyApp.csproj",
       "packagesPath": "C:\\Users\\PARK HYE RIM\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\2. ASP.NET\\MyApp\\MyApp\\obj\\",
+      "outputPath": "D:\\GitHub\\MyApp\\MyApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
