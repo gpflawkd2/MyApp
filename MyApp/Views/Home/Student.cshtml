@@ -1,4 +1,11 @@
 ﻿@* Razor View 파일: C#코드가 HTML코드와 함께 렌더링되는 View 파일 *@
+
+@* @기호: C#코드를 쓸 수 있게 해주는 접두사 *@
+@using MyApp.Models
+@model Student
+
+@* asp-for TagHelper 사용시 id와 Name 속성 자동 생성됨 *@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,19 +24,25 @@
             <div class="form-group">
                 <div class="col-md-3">
                     <label>Name:</label>
-                    <input type="text" class="form-control" name="name" />
+                    @* TagHelper 추가 *@
+                    <input type="text" class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name"></span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-3">
                     <label>Age:</label>
-                    <input type="text" class="form-control" name="age" />
+                    @* TagHelper 추가 *@
+                    <input type="text" class="form-control" asp-for="Age" />
+                    <span asp-validation-for="Age"></span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-3">
                     <label>Country:</label>
-                    <input type="text" class="form-control" name="country" />
+                    @* TagHelper 추가 *@
+                    <input type="text" class="form-control" asp-for="Country" />
+                    <span asp-validation-for="Country"></span>
                 </div>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>

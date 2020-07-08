@@ -21,12 +21,22 @@ namespace MyApp.Controllers
             return View();
         }
 
-        //HTML View에서 넘어오는 값들을 받는 역할
+        //HTML View에서 넘어오는 값들을 받는 역할(Model Binding)
         [HttpPost]
         //받고 싶은 데이터만 받는 방법: Bind 사용
         //public IActionResult Student([Bind("Name, Age")] Student model)
         public IActionResult Student(Student model)
         {
+            //유효성 검사
+            if (ModelState.IsValid)
+            {
+                //true 리턴시
+                //model 데이터를 Student 테이블에 저장
+            }
+            else
+            {
+                //TagHelper를 이용한 에러내용 보여줌
+            }
             return View();
         }
     }

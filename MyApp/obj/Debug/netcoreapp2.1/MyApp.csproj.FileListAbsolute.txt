@@ -44,3 +44,4 @@ D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.Views.pdb
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.dll
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.pdb
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.csproj.CopyComplete
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
