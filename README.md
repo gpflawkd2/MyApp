@@ -1,4 +1,4 @@
-# MyApp
+# ASP.NET-Core-Hello
 ASP.NET Core web page
 
 ## Prerequisites
