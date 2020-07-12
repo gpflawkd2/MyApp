@@ -43,7 +43,8 @@ namespace MyApp
             //wwwroot의 Static File을 사용함
             app.UseStaticFiles();
 
-            //라우팅 미들웨어 설정
+            //Routing MiddleWare Setting
+            //Mvc에서는 Url의 패턴을 보고 Routing을 결정함
             //id?로 표시해줌으로써 id값을 넣지 않아도 페이지 실행 가능
             app.UseMvc(routes =>
             {

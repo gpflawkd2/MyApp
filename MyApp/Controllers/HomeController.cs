@@ -21,11 +21,14 @@ namespace MyApp.Controllers
             return View();
         }
 
-        //HTML View에서 넘어오는 값들을 받는 역할(Model Binding)
+        //HTML View에서 넘어오는 값들을 받는 역할
+        //post 요청으로 Controller에 들어왔을 때 Model Binding 처리함
         [HttpPost]
+        // 사이트간 요청 위조 예방 > html페이지 Form의 Token 체크(recommend!!)
+        [ValidateAntiForgeryToken]
+        public IActionResult Student(Student model)
         //받고 싶은 데이터만 받는 방법: Bind 사용
         //public IActionResult Student([Bind("Name, Age")] Student model)
-        public IActionResult Student(Student model)
         {
             //유효성 검사
             if (ModelState.IsValid)
@@ -35,7 +38,7 @@ namespace MyApp.Controllers
             }
             else
             {
-                //TagHelper를 이용한 에러내용 보여줌
+                //TagHelper를 이용한 에러내용 출력
             }
             return View();
         }
