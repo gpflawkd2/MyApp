@@ -46,3 +46,5 @@ D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.pdb
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\MyApp.csproj.CopyComplete
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Student_2020714.g.cshtml.cs
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs

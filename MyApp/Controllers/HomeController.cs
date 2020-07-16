@@ -12,6 +12,11 @@ namespace MyApp.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         //GET: /<controller>/
         //IActionResult: 함수안에 짜놓은 코드들을 알맞게 View에 매핑해서 return함
         //Views 폴더에 Controller Class의 이름과 동일한 폴더명이 있어야함
@@ -34,6 +39,7 @@ namespace MyApp.Controllers
                 Teachers = teachers
             };
 
+            //F12: 상세보기
             //return View();
             return View(viewModel);
         }
@@ -41,7 +47,7 @@ namespace MyApp.Controllers
         //HTML View에서 넘어오는 값들을 받는 역할
         //post 요청으로 Controller에 들어왔을 때 Model Binding 처리함
         [HttpPost]
-        // 사이트간 요청 위조 예방 > html페이지 Form의 Token 체크(recommend!!)
+        //사이트간 요청 위조 예방 > html페이지 Form의 Token 체크(recommend!!)
         [ValidateAntiForgeryToken]
         public IActionResult Student(StudentTeacherViewModel model)
         //받고 싶은 데이터만 받는 방법: Bind 사용
