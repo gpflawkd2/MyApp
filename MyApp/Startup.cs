@@ -52,7 +52,7 @@ namespace MyApp
                     name: "default",
                     //template: "{controller}/{action}/{id?}"
                     //웹사이트 접속시 첫화면 설정(HomeController > Student 실행화면)
-                    template: "{controller=Home}/{action=Student}/{id?}"
+                    template: "{controller=Home}/{action=Index}/{id?}"
                     );
             });
         }

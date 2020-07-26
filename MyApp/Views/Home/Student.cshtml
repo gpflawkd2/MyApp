@@ -1,4 +1,4 @@
-﻿@* Razor View 파일: C#코드가 HTML코드와 함께 렌더링되는 View 파일 *@
+﻿@* Razor View: C#코드가 HTML코드와 함께 렌더링되는 View 파일 *@
 @* 
     // @기호: C#코드를 쓸 수 있게 해주는 접두사
     // namespace 추가
@@ -10,70 +10,57 @@
     ViewBag.Title = "Student";
 }
 
-        <div style="margin:10px;">
-            <h2>Add New Student</h2>
-            @*
-            // ASP.NET Core에서는 form 안에 Token이 자동으로 생성됨
-            // form 속성에 asp-antiforgery="false" 사용시 Token 생성이 안됨
-            *@
-            <form class="form form-horizontal" method="post">
-                <div class="form-group">
-                    <img src="~/images/main.jpg" alt="메인이미지" style="width:290px; height:320px;margin:10px;" />
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <label>Name:</label>
-                        @*
-                        // TagHelper 사용을 위한 asp-validation-for, asp-for Tag 추가
-                        // asp-for Tag 사용시 id와 Name 속성 자동 생성됨
-                        *@
-                        <input type="text" class="form-control" asp-for="@Model.Student.Name" />
-                        <span asp-validation-for="@Model.Student.Name"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <label>Age:</label>
-                        @*
-                        // TagHelper 사용을 위한 asp-validation-for, asp-for Tag 추가
-                        // asp-for Tag 사용시 id와 Name 속성 자동 생성됨
-                        *@
-                        <input type="text" class="form-control" asp-for="@Model.Student.Age" />
-                        <span asp-validation-for="@Model.Student.Age"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <label>Country:</label>
-                        @*
-                        // TagHelper 사용을 위한 asp-validation-for, asp-for Tag 추가
-                        // asp-for Tag 사용시 id와 Name 속성 자동 생성됨
-                        *@
-                        <input type="text" class="form-control" asp-for="@Model.Student.Country" />
-                        <span asp-validation-for="@Model.Student.Country"></span>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-
-            <hr />
-
-            <h2>Our Teachers</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Class</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach(var teacher in Model.Teachers)
-                    {
-                        <tr>
-                            <td>@teacher.Name</td>
-                            <td>@teacher.Class</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+<div style="margin:10px;">
+    <h2>Add New Student</h2>
+    @*
+        // ASP.NET Core에서는 form 안에 Token이 자동으로 생성됨
+        // form 속성에 asp-antiforgery="false" 사용시 Token 생성이 안됨
+    *@
+    <form class="form form-horizontal" method="post">
+        <div class="form-group">
+            <img src="~/images/main.jpg" alt="메인이미지" style="width:290px; height:320px;margin:10px;" />
         </div>
+        <div class="form-group">
+            <div class="col-md-3">
+                <label>Name:</label>
+                @*
+                    // TagHelper 사용을 위한 asp-validation-for, asp-for Tag 추가
+                    // asp-for Tag 사용시 id와 Name 속성 자동 생성됨
+                *@
+                <input type="text" class="form-control" asp-for="@Model.Student.Name" />
+                <span asp-validation-for="@Model.Student.Name"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+                <label>Age:</label>
+                @*
+                    // TagHelper 사용을 위한 asp-validation-for, asp-for Tag 추가
+                    // asp-for Tag 사용시 id와 Name 속성 자동 생성됨
+                *@
+                <input type="text" class="form-control" asp-for="@Model.Student.Age" />
+                <span asp-validation-for="@Model.Student.Age"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+                <label>Country:</label>
+                @*
+                    // TagHelper 사용을 위한 asp-validation-for, asp-for Tag 추가
+                    // asp-for Tag 사용시 id와 Name 속성 자동 생성됨
+                *@
+                <input type="text" class="form-control" asp-for="@Model.Student.Country" />
+                <span asp-validation-for="@Model.Student.Country"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <hr />
+
+    @*
+        // Partial View 연동
+    *@
+    @await Html.PartialAsync("_TeacherTable", Model);
+
+</div>

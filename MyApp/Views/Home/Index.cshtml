@@ -1,4 +1,5 @@
-﻿@{
+﻿@model StudentTeacherViewModel
+@{
     ViewBag.Title = "Home";
 }
 <div class="container">
@@ -7,3 +8,13 @@
         <p>We are learning ASP.NET Core</p>
     </div>
 </div>
+
+@*
+    // Partial View 연동
+    // await, Async 키워드 함께 사용시 deadlock 예방 가능
+*@
+@*
+    // Model을 쓰지 않고 단순 HTML인 경우 두번째 매개변수는 넘기지 않아도 됨
+    @await Html.PartialAsync("_TeacherTable");
+*@
+@await Html.PartialAsync("_TeacherTable", Model);
