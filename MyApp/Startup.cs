@@ -51,7 +51,7 @@ namespace MyApp
                 routes.MapRoute(
                     name: "default",
                     //template: "{controller}/{action}/{id?}"
-                    //웹사이트 접속시 첫화면 설정(HomeController > Student 실행화면)
+                    //웹사이트 접속시 첫화면 설정(HomeController > Index 실행화면)
                     template: "{controller=Home}/{action=Index}/{id?}"
                     );
             });

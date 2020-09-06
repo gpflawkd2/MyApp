@@ -9,6 +9,9 @@ namespace MyApp.Models
 {
     public class Student
     {
+        //Context Mapping시 오류 방지를 위해 Id 속성 추가
+        public int Id { get; set; }
+
         //특정 필드만 제외시킬 때 BindNever 사용
         //[BindNever]
 
