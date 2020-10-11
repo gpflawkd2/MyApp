@@ -5,20 +5,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyApp.Data;
 
 namespace MyApp
 {
+    // This method gets called by the runtime. Use this method to add services to the container.
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        private readonly IConfiguration _config;
 
+        //ctor + Tab 2번 -> 생성자 생성
+        //IConfiguration 서비스를 통해 appsettings.json 파일을 불러올 수 있음
+        public Startup(IConfiguration config)
+        {
+            _config = config;
+        }
         // IServiceCollection: 컨테이너
         // 컨테이너에 services 를 추가함(의존성 주입:Defendency Injection)
         // 어플리케이션 어느곳에서든지 이 서비스를 간편한 방법으로 사용할 수 있음
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MyAppContext>(options =>
+            {
+                //GetConnectionString: MyAppConnection의 Value값을 불러옴
+                options.UseSqlServer(_config.GetConnectionString("MyAppConnection"));
+            });
+
             //Mvc 실행
             services.AddMvc();
         }
