@@ -35,9 +35,14 @@ namespace MyApp.Controllers
 
         //GET: /<controller>/
         //IActionResult: 함수안에 짜놓은 코드들을 알맞게 View에 매핑해서 return함
-        //Views 폴더에 Controller Class의 이름과 동일한 폴더명이 있어야함
-        //Views > Home 폴더에 Controller Class의 Action 함수명(Student)과 동일한 Razor View 파일을 추가해주어야함
-        //Razor View를 display 하는 역할
+
+        /*
+        Controller에서 View까지 도달하는 MVC 규칙
+        1. Views 폴더 안에 해당 Controller 이름과 매칭하는 폴더를 생성
+        2. 또, 그 안에 Action 함수 이름과 매칭하는 Razor View를 생성
+        */
+
+        //Razor File을 display 하는 역할 
         public IActionResult Student()
         {
             List<Teacher> teachers = new List<Teacher>()
@@ -60,14 +65,14 @@ namespace MyApp.Controllers
             return View(viewModel);
         }
 
-        //HTML View에서 넘어오는 값들을 받는 역할
-        //post 요청으로 Controller에 들어왔을 때 Model Binding 처리함
+        //View에서 post 요청으로 Controller에 넘어오는 값들을 받는 역할
         [HttpPost]
         //사이트간 요청 위조 예방 > html페이지 Form의 Token 체크(recommend!!)
         [ValidateAntiForgeryToken]
         public IActionResult Student(StudentTeacherViewModel model)
-        //받고 싶은 데이터만 받는 방법: Bind 사용
+        //받고 싶은 데이터만 받는 방법: Bind Attribute 사용
         //public IActionResult Student([Bind("Name, Age")] Student model)
+        //public IActionResult Student(Student model)
         {
             //유효성 검사
             if (ModelState.IsValid)

@@ -38,7 +38,6 @@ namespace MyApp
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         // HTTP processing pipeline을 설정해주는 곳
         // 어떤 웹요청이 들어왔을 때 어떻게 듣고, 어떤 식으로 진행할 것인가를 정의해주는 곳
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -58,9 +57,12 @@ namespace MyApp
             //wwwroot의 Static File을 사용함
             app.UseStaticFiles();
 
-            //Routing MiddleWare Setting
-            //Mvc에서는 Url의 패턴을 보고 Routing을 결정함
-            //id?로 표시해줌으로써 id값을 넣지 않아도 페이지 실행 가능
+            /*
+            Routing MiddleWare Setting
+            Mvc에서는 Url의 패턴을 보고 Routing을 결정함
+            매개변수 뒤에 ?를 추가함으로써 선택적인 매개변수가 됨
+            ex. /Home/Student, /Home/Student/2 모두 가능
+            */
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
