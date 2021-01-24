@@ -22,7 +22,7 @@
 
   <!-- 2.0 Ver.Command-line Tool 설치
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="2.1.1" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="2.0.0" />
   </ItemGroup>
   -->
   <!-- 2.1 Ver.의 경우 이미 설치되어 있음 -->

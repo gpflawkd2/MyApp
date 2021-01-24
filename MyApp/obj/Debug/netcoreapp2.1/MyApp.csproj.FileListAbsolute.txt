@@ -49,5 +49,4 @@ D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtm
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\_TeacherTable.g.cshtml.cs
-D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Student_20210110.g.cshtml.cs
 D:\GitHub\MyApp\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Student_20200714.g.cshtml.cs

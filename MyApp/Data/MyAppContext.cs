@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Data
 {
-    public class MyAppContext : DbContext
+    public class MyAppContext : DbContext   // DbContext를 상속받음
     {
         //ctor + Tab 2번 -> 생성자 생성
         public MyAppContext(DbContextOptions options) : base(options) { }
