@@ -34,13 +34,20 @@ namespace MyApp
                 options.UseSqlServer(_config.GetConnectionString("MyAppConnection"));
             });
 
+            /*
+            Transient() 함수는 필요할 때마다 생성이 되는 서비스
+            캐시 내에 머물러있지 않고 보존되지 않는 형태
+            DbSeeder는 웹어플리케이션의 생명주기에서 딱 한번만 필요한 서비스이므로 Transient() 함수가 적합함
+            */
+            services.AddTransient<DbSeeder>();
+
             //Mvc 실행
             services.AddMvc();
         }
 
         // HTTP processing pipeline을 설정해주는 곳
         // 어떤 웹요청이 들어왔을 때 어떻게 듣고, 어떤 식으로 진행할 것인가를 정의해주는 곳
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, DbSeeder seeder)
         {
             if (env.IsDevelopment())
             {
@@ -72,6 +79,8 @@ namespace MyApp
                     template: "{controller=Home}/{action=Index}/{id?}"
                     );
             });
+
+            seeder.SeedDatabase().Wait();
         }
     }
 }
