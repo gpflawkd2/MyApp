@@ -11794,23 +11794,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PARK HYE RIM\\.nuget\\packages\\": {},
+    "C:\\Users\\hyerim.park\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\MyApp\\MyApp\\MyApp.csproj",
+      "projectUniqueName": "D:\\GitHub\\ASP.NET-Core-Hello\\MyApp\\MyApp.csproj",
       "projectName": "MyApp",
-      "projectPath": "D:\\GitHub\\MyApp\\MyApp\\MyApp.csproj",
-      "packagesPath": "C:\\Users\\PARK HYE RIM\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\MyApp\\MyApp\\obj\\",
+      "projectPath": "D:\\GitHub\\ASP.NET-Core-Hello\\MyApp\\MyApp.csproj",
+      "packagesPath": "C:\\Users\\hyerim.park\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\ASP.NET-Core-Hello\\MyApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\PARK HYE RIM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hyerim.park\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

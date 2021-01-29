@@ -46,8 +46,6 @@ namespace MyApp.Migrations
 
                     b.Property<string>("Class");
 
-                    b.Property<string>("Country");
-
                     b.Property<string>("Name");
 
                     b.HasKey("Id");

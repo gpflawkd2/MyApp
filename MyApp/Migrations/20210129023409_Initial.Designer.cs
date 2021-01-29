@@ -9,8 +9,8 @@ using MyApp.Data;
 namespace MyApp.Migrations
 {
     [DbContext(typeof(MyAppContext))]
-    [Migration("20210124124518_Second")]
-    partial class Second
+    [Migration("20210129023409_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,8 +47,6 @@ namespace MyApp.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Class");
-
-                    b.Property<string>("Country");
 
                     b.Property<string>("Name");
 
