@@ -51,6 +51,7 @@ namespace MyApp
 
             //첫 번째 파라미터(ITeacherRepository)는 앞으로 서비스로서 Application 안에서 쓸 수 있게 하고 TeacherRepository는 ITeacherRepository에 구현화된 클래스로서 사용하라는 의미
             services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
 
             /*
             Singleton() 함수는 Application의 생명주기동안 단 한번만 instance를 생성하고 http 요청이 있을 때마다 생성된 instance를 계속 재사용함

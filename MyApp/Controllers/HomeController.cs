@@ -11,17 +11,21 @@ namespace MyApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ITeacherRepository _repository;
+        private readonly ITeacherRepository _teacherRepository;
+        private readonly IStudentRepository _studentRepository;
 
         //생성자 생성
-        public HomeController(ITeacherRepository repository)
+        public HomeController(ITeacherRepository teacherRepository,
+                              IStudentRepository studentRepository)
         {
-            _repository = repository;
+            //필드화
+            _teacherRepository = teacherRepository;
+            _studentRepository = studentRepository;
         }
 
         public IActionResult Index()
         {
-            var teachers = _repository.GetAllTeachers();
+            var teachers = _teacherRepository.GetAllTeachers();
 
             //StudentTeacherViewModel 인스턴스화
             var viewModel = new StudentTeacherViewModel()
@@ -78,8 +82,9 @@ namespace MyApp.Controllers
             //유효성 검사
             if (ModelState.IsValid)
             {
-                //true 리턴시
-                //model 데이터를 Student 테이블에 저장
+                //true 리턴시, model 데이터를 Student 테이블에 저장
+                _studentRepository.AddStudent(model.Student);
+                _studentRepository.Save();
             }
             else
             {
