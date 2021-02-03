@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyApp.Data;
+using MyApp.Data.Repositories;
 
 namespace MyApp
 {
@@ -35,11 +36,28 @@ namespace MyApp
             });
 
             /*
-            Transient() 함수는 필요할 때마다 생성이 되는 서비스
-            캐시 내에 머물러있지 않고 보존되지 않는 형태
+            Transient() 함수는 필요할 때마다 생성되는 서비스
+            http 요청이 있을 때마다 새로운 instance를 매번 생성하는 생명주기를 가지고 있음
+            캐시 내에 머물러있지 않고 보존되지 않는 형태   
             DbSeeder는 웹어플리케이션의 생명주기에서 딱 한번만 필요한 서비스이므로 Transient() 함수가 적합함
             */
             services.AddTransient<DbSeeder>();
+
+            /*
+            Scoped() 함수는 첫 번째 파라미터(ITeacherRepository)를 필요로 하는 곳에서 http 요청이 있을 때마다
+            instance를 생성하고 생성된 instance를 http 요청 안에서 계속 재사용하는 생명주기를 가지고 있음
+            데이터 접근 컴포넌트에서 많이 쓰임
+            */
+
+            //첫 번째 파라미터(ITeacherRepository)는 앞으로 서비스로서 Application 안에서 쓸 수 있게 하고 TeacherRepository는 ITeacherRepository에 구현화된 클래스로서 사용하라는 의미
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
+
+            /*
+            Singleton() 함수는 Application의 생명주기동안 단 한번만 instance를 생성하고 http 요청이 있을 때마다 생성된 instance를 계속 재사용함
+            주로 속성이 변하지 않는 정적인 데이터를 메모리 내에 저장해서 의존성주입이 필요할 때마다 쓰임
+            */
+            //services.AddSingleton<>();
+
 
             //Mvc 실행
             services.AddMvc();
