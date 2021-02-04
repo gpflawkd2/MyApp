@@ -50,19 +50,14 @@ namespace MyApp.Controllers
         //Razor File을 display 하는 역할 
         public IActionResult Student()
         {
-            List<Teacher> teachers = new List<Teacher>()
-            {
-                new Teacher(){Name="세종대왕", Class="한글"},
-                new Teacher(){Name="이순신", Class="해상전략"},
-                new Teacher(){Name="제갈량", Class ="지략"},
-                new Teacher(){Name="을지문덕", Class = "지상전략"}
-            };
+
+            var students = _studentRepository.GetAllStudent();
 
             //StudentTeacherViewModel 인스턴스화
             var viewModel = new StudentTeacherViewModel()
             {
                 Student = new Student(),
-                Teachers = teachers
+                Students = students
             };
 
             //F12: 상세보기
@@ -90,7 +85,26 @@ namespace MyApp.Controllers
             {
                 //TagHelper를 이용한 에러내용 출력
             }
-            return View();
+
+            var students = _studentRepository.GetAllStudent();
+
+            var viewModel = new StudentTeacherViewModel()
+            {
+                Student = new Student(),
+                Students = students
+            };
+
+            //입력 Data 초기화
+            ModelState.Clear();
+
+            return View(viewModel);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var result = _studentRepository.GetStudent(id);
+
+            return View(result);
         }
     }
 }
