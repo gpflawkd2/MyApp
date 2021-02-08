@@ -63,15 +63,17 @@
         <th>이름</th>
         <th>나이</th>
         <th>Action</th>
+        <th>Edit</th>
     </thead>
     <tbody>
         @foreach (var student in Model.Students)
         {
-        <tr>
-            <td>@student.Name</td>
-            <td>@student.Age</td>
-            <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@student.Id">Detail</a></td>
-        </tr>
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@student.Id">Detail</a></td>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@student.Id">Edit</a></td>
+            </tr>
         }
     </tbody>
 </table>

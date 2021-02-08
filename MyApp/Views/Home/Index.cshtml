@@ -14,7 +14,7 @@
     //Partial View 연동(코드 재사용성 향상)
     //await, Async 키워드 함께 사용시 deadlock 예방 가능
     //Model을 쓰지 않고 단순 HTML인 경우 두번째 매개변수는 넘기지 않아도 됨
-    //@await Html.PartialAsync("_TeacherTable");
+    //@await Html.PartialAsync("_TeacherTable")
 *@
 
-@await Html.PartialAsync("_TeacherTable", Model);
+@await Html.PartialAsync("_TeacherTable", Model)

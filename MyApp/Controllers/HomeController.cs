@@ -47,7 +47,7 @@ namespace MyApp.Controllers
         2. 또, 그 안에 Action 함수 이름과 매칭하는 Razor View를 생성
         */
 
-        //Razor File을 display 하는 역할 
+        // GET: Student
         public IActionResult Student()
         {
 
@@ -65,7 +65,7 @@ namespace MyApp.Controllers
             return View(viewModel);
         }
 
-        //View에서 post 요청으로 Controller에 넘어오는 값들을 받는 역할
+        // POST: Student
         [HttpPost]
         //사이트간 요청 위조 예방 > html페이지 Form의 Token 체크(recommend!!)
         [ValidateAntiForgeryToken]
@@ -80,6 +80,9 @@ namespace MyApp.Controllers
                 //true 리턴시, model 데이터를 Student 테이블에 저장
                 _studentRepository.AddStudent(model.Student);
                 _studentRepository.Save();
+
+                //입력 Data 초기화
+                ModelState.Clear();
             }
             else
             {
@@ -94,9 +97,6 @@ namespace MyApp.Controllers
                 Students = students
             };
 
-            //입력 Data 초기화
-            ModelState.Clear();
-
             return View(viewModel);
         }
 
@@ -105,6 +105,32 @@ namespace MyApp.Controllers
             var result = _studentRepository.GetStudent(id);
 
             return View(result);
+        }
+
+        // GET: Edit
+        public IActionResult Edit(int id)
+        {
+            var result = _studentRepository.GetStudent(id);
+
+            return View(result);
+        }
+
+        // POST: Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Student student)
+        {
+            //유효성 검사
+            if (ModelState.IsValid)
+            {
+                _studentRepository.Edit(student);
+                _studentRepository.Save();
+
+                return RedirectToAction("Student");
+            }
+
+            //유효성 검사 False인 경우, 기존 정보를 다시 보여줌
+            return View(student);
         }
     }
 }

@@ -9,5 +9,6 @@ namespace MyApp.Data.Repositories
         IEnumerable<Student> GetAllStudent();
         Student GetStudent(int id);
         void Save();
+        void Edit(Student student);
     }
 }

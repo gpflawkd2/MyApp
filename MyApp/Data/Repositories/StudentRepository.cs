@@ -41,5 +41,14 @@ namespace MyApp.Data.Repositories
             var result = _context.Students.Find(id);
             return result;
         }
+
+        public void Edit(Student student)
+        {
+            /*
+            DB 변동없음
+            EntityFramework에서 메모리 내에 Student Entity가 DB에 변화가 되었다는 변동사항만 추적하고 있음
+            */
+            _context.Update(student);
+        }
     }
 }

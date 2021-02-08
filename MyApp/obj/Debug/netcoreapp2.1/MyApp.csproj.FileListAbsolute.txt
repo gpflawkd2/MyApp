@@ -80,3 +80,4 @@ D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_L
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Detail.g.cshtml.cs
+D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Edit.g.cshtml.cs
