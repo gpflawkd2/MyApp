@@ -50,5 +50,10 @@ namespace MyApp.Data.Repositories
             */
             _context.Update(student);
         }
+
+        public void Delete(Student student)
+        {
+            _context.Remove(student);
+        }
     }
 }

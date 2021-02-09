@@ -64,6 +64,7 @@
         <th>나이</th>
         <th>Action</th>
         <th>Edit</th>
+        <th>Delete</th>
     </thead>
     <tbody>
         @foreach (var student in Model.Students)
@@ -73,6 +74,7 @@
                 <td>@student.Age</td>
                 <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@student.Id">Detail</a></td>
                 <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@student.Id">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@student.Id">Delete</a></td>
             </tr>
         }
     </tbody>

@@ -10,5 +10,6 @@ namespace MyApp.Data.Repositories
         Student GetStudent(int id);
         void Save();
         void Edit(Student student);
+        void Delete(Student student);
     }
 }

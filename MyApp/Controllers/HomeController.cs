@@ -132,5 +132,18 @@ namespace MyApp.Controllers
             //유효성 검사 False인 경우, 기존 정보를 다시 보여줌
             return View(student);
         }
+
+        public IActionResult Delete(int id)
+        {
+            var result = _studentRepository.GetStudent(id);
+
+            if (result != null)
+            {
+                _studentRepository.Delete(result);
+                _studentRepository.Save();
+            }
+
+            return RedirectToAction("Student");
+        }
     }
 }
