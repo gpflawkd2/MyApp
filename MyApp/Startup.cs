@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,6 +35,16 @@ namespace MyApp
                 //GetConnectionString: MyAppConnection의 Value값을 불러옴
                 options.UseSqlServer(_config.GetConnectionString("MyAppConnection"));
             });
+
+            // .Net Core Identity = MemberShip System
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                //패스워드 설정, 쿠키설정, 계정잠금 설정 가능
+
+                //패스워드 6자 이상 입력 가능
+                options.Password.RequiredLength = 6;
+            })
+            .AddEntityFrameworkStores<MyAppContext>();
 
             /*
             Transient() 함수는 필요할 때마다 생성되는 서비스
@@ -82,6 +93,9 @@ namespace MyApp
 
             //wwwroot의 Static File을 사용함
             app.UseStaticFiles();
+
+            //UseMvc 위에 선언해주어야 함
+            app.UseAuthentication();
 
             /*
             Routing MiddleWare Setting

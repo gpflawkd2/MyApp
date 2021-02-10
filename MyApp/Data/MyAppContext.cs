@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyApp.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Data
 {
-    public class MyAppContext : DbContext   // DbContext를 상속받음
+    public class MyAppContext : IdentityDbContext<ApplicationUser>
     {
         //ctor + Tab 2번 -> 생성자 생성
         public MyAppContext(DbContextOptions options) : base(options) { }
