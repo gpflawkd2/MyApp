@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyApp.Data;
 using MyApp.Data.Repositories;
+using MyApp.Models;
 
 namespace MyApp
 {
@@ -44,7 +45,7 @@ namespace MyApp
                 //패스워드 6자 이상 입력 가능
                 options.Password.RequiredLength = 6;
             })
-            .AddEntityFrameworkStores<MyAppContext>();
+            .AddEntityFrameworkStores<MyAppContext>();  //MyAppContext에서 User Data를 가져옴 <- 사전작업: MyAppContext.cs에서 IdentityDbContext를 상속받아야함
 
             /*
             Transient() 함수는 필요할 때마다 생성되는 서비스
@@ -94,7 +95,10 @@ namespace MyApp
             //wwwroot의 Static File을 사용함
             app.UseStaticFiles();
 
-            //UseMvc 위에 선언해주어야 함
+            /*
+            인증서비스 활성화
+            UseMvc 위에 선언해주어야 함
+            */
             app.UseAuthentication();
 
             /*

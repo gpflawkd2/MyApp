@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Models
 {
-    // IdentityUser: .Net Core Identity에서 제공하는 User Class
+    // IdentityUser: .Net Identity에서 제공하는 User Class
     public class ApplicationUser : IdentityUser
     {
         public string FullName { get; set; }
