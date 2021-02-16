@@ -49,6 +49,7 @@ namespace MyApp.Controllers
         */
 
         // GET: Student
+        // 로그인시에만 페이지 접근 가능함
         [Authorize]
         public IActionResult Student()
         {

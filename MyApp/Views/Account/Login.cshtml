@@ -1,0 +1,27 @@
+﻿@model LoginViewModel
+
+@{
+    ViewBag.Title = "로그인";
+}
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-5">
+        <h2 style="text-align:center">로그인</h2>
+        <hr />
+        <form method="post" class="form-horizontal">
+            <div class="form-group">
+                <label asp-for="Email">이메일</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">비밀번호</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <buttom type="submit" class="btn btn-info">로그인</buttom>
+            </div>
+        </form>
+    </div>
+</div>

@@ -8,8 +8,12 @@ namespace MyApp.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: /<controller>/
         public IActionResult Register()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
         {
             return View();
         }

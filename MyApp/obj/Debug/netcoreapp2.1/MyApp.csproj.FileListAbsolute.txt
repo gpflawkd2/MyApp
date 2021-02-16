@@ -82,3 +82,4 @@ D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStar
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Detail.g.cshtml.cs
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Edit.g.cshtml.cs
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
