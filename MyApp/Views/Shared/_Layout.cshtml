@@ -14,12 +14,22 @@
                  <a class="navbar-brand" asp-controller="Home" asp-action="Index">MyApp</a>
              </div>
              <ul class="nav navbar-nav">
-                 <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                 <li><a asp-controller="Home" asp-action="Student">Student</a></li>
+                 @if (User.Identity.IsAuthenticated)
+                 {
+                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                     <li><a asp-controller="Home" asp-action="Student">Student</a></li>
+                 }
              </ul>
              <ul class="nav navbar-nav pull-right">
-                 <li><a asp-controller="Account" asp-action="Register">회원가입</a></li>
-                 <li><a asp-controller="Account" asp-action="Login">로그인</a></li>
+                 @if (User.Identity.IsAuthenticated)
+                 {
+                     <li><a asp-controller="Account" asp-action="Logout">로그아웃</a></li>
+                 }
+                 else
+                 {
+                     <li><a asp-controller="Account" asp-action="Register">회원가입</a></li>
+                     <li><a asp-controller="Account" asp-action="Login">로그인</a></li>
+                 }
              </ul>
         </div>
     </nav>

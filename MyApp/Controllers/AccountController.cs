@@ -12,12 +12,15 @@ namespace MyApp.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
         //생성자 생성
-        public AccountController(UserManager<ApplicationUser> userManager)
+        public AccountController(UserManager<ApplicationUser> userManager,
+                                 SignInManager<ApplicationUser> signInManager)
         {
             //의존성주입을 위한 필드화
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Register()
@@ -48,6 +51,30 @@ namespace MyApp.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+
+                if (result.Succeeded)
+                    return RedirectToAction("Index", "Home");
+
+                ModelState.AddModelError("", "로그인 실패");
+            }
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Login");
         }
     }
 }
