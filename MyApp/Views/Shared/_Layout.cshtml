@@ -17,6 +17,9 @@
                  @if (User.Identity.IsAuthenticated)
                  {
                      <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                 }
+                 @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                 {
                      <li><a asp-controller="Home" asp-action="Student">Student</a></li>
                  }
              </ul>

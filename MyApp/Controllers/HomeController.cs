@@ -50,8 +50,8 @@ namespace MyApp.Controllers
         */
 
         // GET: Student
-        // 로그인시에만 페이지 접근 가능함
-        [Authorize]
+        // Admin Role의 계정만 View 가능
+        [Authorize(Roles = "Admin")]
         public IActionResult Student()
         {
 
@@ -73,6 +73,8 @@ namespace MyApp.Controllers
         [HttpPost]
         //사이트간 요청 위조 예방 > html페이지 Form의 Token 체크(recommend!!)
         [ValidateAntiForgeryToken]
+        // Admin Role의 계정만 View 가능
+        [Authorize(Roles = "Admin")]
         public IActionResult Student(StudentTeacherViewModel model)
         //받고 싶은 데이터만 받는 방법: Bind Attribute 사용
         //public IActionResult Student([Bind("Name, Age")] Student model)

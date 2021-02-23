@@ -1,4 +1,5 @@
-﻿using MyApp.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using MyApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,18 @@ namespace MyApp.Data
 {
     public class DbSeeder
     {
-        private MyAppContext _context;
+        private readonly MyAppContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         //생성자
-        public DbSeeder(MyAppContext context)
+        public DbSeeder(MyAppContext context,
+                        UserManager<ApplicationUser> userManager,
+                        RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         //async : 비동기 프로그래밍 키워드(사용시 Task 타입 붙여서 사용)
@@ -37,6 +44,14 @@ namespace MyApp.Data
                 //DB 저장
                 await _context.SaveChangesAsync();
             }
+
+            //운영자 Role 생성
+            var adminAccount = await _userManager.FindByNameAsync("admin@gmail.com");
+            //Admin Role 생성 및 AspNetRoles 테이블에 추가
+            var adminRole = new IdentityRole("Admin");
+            await _roleManager.CreateAsync(adminRole);
+            //adminAccount 계정에 운영자 Role 부여
+            await _userManager.AddToRoleAsync(adminAccount, adminRole.Name);
         }
     }
 }
