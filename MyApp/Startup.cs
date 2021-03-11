@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MyApp.Data;
 using MyApp.Data.Repositories;
 using MyApp.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace MyApp
 {
@@ -74,6 +75,10 @@ namespace MyApp
 
             //Mvc 실행
             services.AddMvc();
+
+            #pragma warning disable CS0618 // Type or member is obsolete
+            services.AddPaging();
+            #pragma warning restore CS0618 // Type or member is obsolete
         }
 
         // HTTP processing pipeline을 설정해주는 곳

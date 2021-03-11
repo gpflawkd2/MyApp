@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MyApp.Data;
 using MyApp.Data.Repositories;
 using MyApp.Models;
 using MyApp.ViewModels;
+using ReflectionIT.Mvc.Paging;
 
 namespace MyApp.Controllers
 {
@@ -14,30 +15,38 @@ namespace MyApp.Controllers
     {
         private readonly ITeacherRepository _teacherRepository;
         private readonly IStudentRepository _studentRepository;
+        private readonly MyAppContext _context;
 
         //생성자 생성
         public HomeController(ITeacherRepository teacherRepository,
-                              IStudentRepository studentRepository)
+                              IStudentRepository studentRepository,
+                              MyAppContext context)
         {
             //필드화
             _teacherRepository = teacherRepository;
             _studentRepository = studentRepository;
+            _context = context;
         }
 
         [Authorize]
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var teachers = _teacherRepository.GetAllTeachers();
+           /*
+           var teachers = _teacherRepository.GetAllTeachers();
 
-            //StudentTeacherViewModel 인스턴스화
-            var viewModel = new StudentTeacherViewModel()
-            {
-                Student = new Student(),
-                Teachers = teachers
-            };
+           var viewModel = new StudentTeacherViewModel()
+           {
+               Student = new Student(),
+               Teachers = teachers
+           };
 
-            //return View();
-            return View(viewModel);
+           return View(viewModel);
+           */
+
+            var qry = _context.Teachers.AsNoTracking().OrderBy(p => p.Id);
+            var teachers = await PagingList.CreateAsync(qry, 10, page);
+            
+            return View(teachers);
         }
 
         //GET: /<controller>/

@@ -5,9 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Views\Home\Index_20210311.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- 2.1 Ver. -->
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" /> 
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="ReflectionIT.Mvc.Paging" Version="3.0.0" /> 
     <!-- 2.0 Ver.
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     --> 
