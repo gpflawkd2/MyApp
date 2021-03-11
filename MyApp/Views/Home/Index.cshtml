@@ -1,6 +1,5 @@
 ﻿@model ReflectionIT.Mvc.Paging.PagingList<MyApp.Models.Teacher>
 @using ReflectionIT.Mvc.Paging
-@addTagHelper *, ReflectionIT.Mvc.Paging
 
 @{
     ViewBag.Title = "Home";
@@ -16,12 +15,23 @@
     @await this.Component.InvokeAsync("Pager", new { pagingList = this.Model })
 </nav>*@
 
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" value="@Model.RouteValue["Filter"]" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon"></span>Search
+    </button>
+</form>
+
 <h2>Our Teachers</h2>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Class</th>
+            <th>
+                @Html.SortableHeaderFor(p => p.Name)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(p => p.Class, "Class, Name")
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +45,6 @@
     </tbody>
 </table>
 
-<nav>
-    <vc:pager paging-list="@Model" />
-</nav>
+@* Partial View 연동 *@
+
+@await Html.PartialAsync("_Paging", Model)

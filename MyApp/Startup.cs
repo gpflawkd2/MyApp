@@ -76,9 +76,12 @@ namespace MyApp
             //Mvc 실행
             services.AddMvc();
 
-            #pragma warning disable CS0618 // Type or member is obsolete
-            services.AddPaging();
-            #pragma warning restore CS0618 // Type or member is obsolete
+            //services.AddPaging();
+            services.AddPaging(options => {
+                options.ViewName = "Bootstrap4";
+                options.HtmlIndicatorDown = "<span>&darr;</span>";
+                options.HtmlIndicatorUp = " <span>&uarr;</span>";
+            });
         }
 
         // HTTP processing pipeline을 설정해주는 곳

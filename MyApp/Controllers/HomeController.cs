@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using MyApp.Data;
 using MyApp.Data.Repositories;
@@ -29,22 +30,38 @@ namespace MyApp.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index(string filter, int page = 1, string sortExpression = "Name")
         {
-           /*
-           var teachers = _teacherRepository.GetAllTeachers();
+            /*
+            var teachers = _teacherRepository.GetAllTeachers();
 
-           var viewModel = new StudentTeacherViewModel()
-           {
-               Student = new Student(),
-               Teachers = teachers
-           };
+            var viewModel = new StudentTeacherViewModel()
+            {
+                Student = new Student(),
+                Teachers = teachers
+            };
 
-           return View(viewModel);
-           */
+            return View(viewModel);
+            */
 
-            var qry = _context.Teachers.AsNoTracking().OrderBy(p => p.Id);
-            var teachers = await PagingList.CreateAsync(qry, 10, page);
+            //var qry = _context.Teachers.AsNoTracking().OrderBy(p => p.Id);
+         
+            var qry = _context.Teachers.AsNoTracking()
+                //.Include(p => p.Name)
+                //.Include(p => p.Class)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(filter))
+            {
+                qry = qry.Where(p => p.Name.Contains(filter));
+            }
+
+            var teachers = await PagingList.CreateAsync(qry, 3, page, sortExpression, "Name");
+           
+            teachers.RouteValue = new RouteValueDictionary
+            {
+                {"Filter", filter }
+            };
             
             return View(teachers);
         }
