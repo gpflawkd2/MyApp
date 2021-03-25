@@ -83,3 +83,4 @@ D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\MyApp.Views.pdb
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\MyApp.dll
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\MyApp.pdb
 D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\MyApp.csproj.CopyComplete
+D:\GitHub\ASP.NET-Core-Hello\MyApp\obj\Debug\netcoreapp2.1\MyApp.csprojAssemblyReference.cache

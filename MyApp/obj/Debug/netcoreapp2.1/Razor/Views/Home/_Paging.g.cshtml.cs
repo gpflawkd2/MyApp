@@ -56,7 +56,7 @@ using MyApp.Models;
             WriteLiteral("\r\n<nav>\r\n    ");
             EndContext();
             BeginContext(80, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7f14c7fd40174215bf4ae358134a506a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e75a02b7cce4495dba93c1904980ebc7", async() => {
             }
             );
             __PagerViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home__Paging.__Generated__PagerViewComponentTagHelper>();

@@ -1,0 +1,22 @@
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.deps.json
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.runtimeconfig.json
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.runtimeconfig.dev.json
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.dll
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.csprojAssemblyReference.cache
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.csproj.CoreCompileInputs.cache
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.AssemblyInfoInputs.cache
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.AssemblyInfo.cs
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.pdb
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.dll
+D:\ETC\PJ\ASP.NET Core\EntityFrameworkCoreStudy\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.pdb
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.deps.json
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.runtimeconfig.json
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.runtimeconfig.dev.json
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.dll
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\bin\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.pdb
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.csprojAssemblyReference.cache
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.csproj.CoreCompileInputs.cache
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.AssemblyInfoInputs.cache
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.AssemblyInfo.cs
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.dll
+D:\GitHub\ASP.NET-Core-Hello\EntityFrameworkCoreStudy\obj\Debug\netcoreapp2.1\EntityFrameworkCoreStudy.pdb
