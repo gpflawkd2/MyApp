@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EntityFrameworkCoreStudy.Data;
+using EntityFrameworkCoreStudy.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EntityFrameworkCoreStudy
 {
@@ -11,81 +13,74 @@ namespace EntityFrameworkCoreStudy
         {
             using (var db = new EfStudyDbContext())
             {
-                var userList = db.Users;
 
-                foreach(var user in userList)
+                #region + Linq의 분류
+
+                // # Linq 분류(2가지)
+                // 1. 쿼리 구문
+                // from user in db.Users
+                // where ...
+                // select user
+
+                // 2. 메서드 구문
+                // db.Users.Where().ToList();
+
+                #endregion
+
+                // 1. SELECT
+                // 1) DbSet<User> selectList = db.Users;
+                // 2) List<User> selectList = db.Users.ToList();
+                // 3) IEnumerable<User> selectList = db.Users.AsEnumerable();
+                // 4) IQueryable<User> selectList = from user in db.Users select user;   //Linq to Sql
+
+                // # IEnumerable vs IQueryable
+                // Extension Query => 작성 가능
+                // 1. IEnumerable => 쿼리 => 데이터 => Client PC Memory에 전송 => Slow
+                // 2. IQueryable => 쿼리 -> 데이터 => Server Memory에 전송 => Fast
+
+                var selectList = db.Users.ToList();
+
+                foreach (var item in selectList)
                 {
-                    Console.WriteLine(user.UserName);
+                    Console.WriteLine(item.UserName);
                 }
+
+                // 2. INSERT
+                // db.Users.Add(T);
+                // db.SaveChanges();
+
+                /*
+                db.Users.Add(new User
+                {
+                    UserName = "홍길님이",
+                    UserId = "honghongss",
+                    UserPassword = "1234"
+                });
+
+                db.SaveChanges();
+                */
+
+                //Console.WriteLine("Insert OK");
+
+                // 3. UPDATE
+                // db.Entry(T).State = EntityState.Modified;
+                // db.SaveChanges();
+
+                /*
+                var note = new Note { NoteNo = 1, NoteContents = "사이트가 오픈 되었습니다.", NoteTitle = "사이트 오픈 안내", UserNo = 2};
+                db.Entry(note).State = EntityState.Modified;
+                db.SaveChanges();
+                */
+
+                // 4. Delete
+                /*
+                var note = new Note { NoteNo = 4};
+                db.Notes.Remove(note);
+                db.SaveChanges();
+                */
+
+                // 외래키로 사용되는 컬럼인 경우, 부모테이블 Update 및 Delete 불가
             }
         }
-    }
-
-    public class EfStudyDbContext : DbContext
-    {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Note> Notes { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=localhost;Database=AspnetNoteDb;User Id=Board;Password=phr8611!;");
-        }
-    }
-
-    public class User
-    {
-        /// <summary>
-        /// 사용자 번호
-        /// </summary>
-        [Key]   // PK 설정
-        public int UserNo { get; set; }
-
-        /// <summary>
-        ///  사용자 이름
-        /// </summary>
-        [Required(ErrorMessage = "사용자 이름을 입력하세요.")]  // Not Null 설정
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// 사용자 ID
-        /// </summary>
-        [Required(ErrorMessage = "사용자 ID를 입력하세요.")]  // Not Null 설정
-        public string UserId { get; set; }
-
-        /// <summary>
-        /// 사용자 비밀번호
-        /// </summary>
-        [Required(ErrorMessage = "사용자 비밀번호를 입력하세요.")]  // Not Null 설정
-        public string UserPassword { get; set; }
-    }
-
-    public class Note
-    {
-        /// <summary>
-        /// 게시물 번호
-        /// </summary>
-        [Key]
-        public int NoteNo { get; set; }
-
-        /// <summary>
-        /// 게시물 제목
-        /// </summary>
-        [Required(ErrorMessage = "제목을 입력하세요.")]
-        public string NoteTitle { get; set; }
-
-        /// <summary>
-        /// 게시물 내용
-        /// </summary>
-        [Required(ErrorMessage = "내용을 입력하세요.")]
-        public string NoteContents { get; set; }
-
-        /// <summary>
-        /// 작성자 번호
-        /// </summary>
-        [Required]
-        public int UserNo { get; set; }
-
-        [ForeignKey("UserNo")]
-        public virtual User User { get; set; }
     }
 }
