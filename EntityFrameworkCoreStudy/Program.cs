@@ -13,20 +13,6 @@ namespace EntityFrameworkCoreStudy
         {
             using (var db = new EfStudyDbContext())
             {
-
-                #region + Linq의 분류
-
-                // # Linq 분류(2가지)
-                // 1. 쿼리 구문
-                // from user in db.Users
-                // where ...
-                // select user
-
-                // 2. 메서드 구문
-                // db.Users.Where().ToList();
-
-                #endregion
-
                 // 1. SELECT
                 // 1) DbSet<User> selectList = db.Users;
                 // 2) List<User> selectList = db.Users.ToList();
@@ -38,12 +24,14 @@ namespace EntityFrameworkCoreStudy
                 // 1. IEnumerable => 쿼리 => 데이터 => Client PC Memory에 전송 => Slow
                 // 2. IQueryable => 쿼리 -> 데이터 => Server Memory에 전송 => Fast
 
+                /*
                 var selectList = db.Users.ToList();
 
                 foreach (var item in selectList)
                 {
                     Console.WriteLine(item.UserName);
                 }
+                */
 
                 // 2. INSERT
                 // db.Users.Add(T);
@@ -80,6 +68,60 @@ namespace EntityFrameworkCoreStudy
                 */
 
                 // 외래키로 사용되는 컬럼인 경우, 부모테이블 Update 및 Delete 불가
+
+
+                #region + Linq의 분류
+
+                // # Linq 분류(2가지)
+                // 1. 쿼리 구문
+                // from user in db.Users
+                // where ...
+                // select user
+
+                // 2. 메서드 구문
+                // db.Users.Where().ToList();
+
+                #endregion
+
+
+                // 5. Where() -> 조건절 -> 리스트가 가능
+                var list = db.Users.Where(u => u.UserNo >= 3);
+
+                foreach (var user in list)
+                {
+                    //$ : Sting Format
+                    Console.WriteLine($"이름:{user.UserName}, 아이디:{user.UserId}({user.UserNo})");
+                }
+
+
+                // 6. First(), FirstOrDefault(), Single(), SingleOrDefault()
+                // # 게시물 1개 수정 -> 데이터 가져옴
+                // 특정 데이터 1개 가져오기
+
+                // 1) First() : 조회된 데이터가 없을 때 오류 발생
+                // 2) FirstOrDefault() : 조회된 데이터가 없을 때 결과값으로 null을 return
+                // 3) Single() : 조회된 데이터가 없거나 2개 이상일 때 오류 발생
+                // 4) SingleOrDefault() : 조회된 데이터가 2개 이상일 때 오류 발생
+
+                // SingleOrDefault() vs FirstOrDefault()
+                // SingleOrDefault() 권장
+                // 중복되지 않는 조건을 사용하기
+
+                var _user = db.Users.SingleOrDefault(u => u.UserNo == 2);
+                // SELECT Top 1 * FROM Users WHERE UserName = "홍길님이"
+
+                Console.WriteLine($"이름:{_user.UserName}, 아이디:{_user.UserId}({_user.UserNo})");
+
+
+                // 7. OrderBy() -> 오름차순 정렬, OrderByDescending() -> 내림차순 정렬
+                var userList = db.Users.OrderByDescending(u => u.UserName).ToList();
+
+                foreach(var users in userList)
+                {
+                    Console.WriteLine($"이름:{users.UserName}, 아이디:{users.UserId}({users.UserNo})");
+                }
+
+
             }
         }
     }
