@@ -121,7 +121,15 @@ namespace EntityFrameworkCoreStudy
                     Console.WriteLine($"이름:{users.UserName}, 아이디:{users.UserId}({users.UserNo})");
                 }
 
+                // 8. Join
+                var noteList = db.Notes
+                    .Include(u => u.User)
+                    .ToList();
 
+                foreach (var note in noteList)
+                {
+                    Console.WriteLine($"제목:{note.NoteTitle}, 내용:{note.NoteContents}({note.NoteNo},{note.User.UserName})");
+                }
             }
         }
     }
