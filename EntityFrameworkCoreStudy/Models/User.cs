@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameworkCoreStudy.Models
 {
-    // Model Class Mapping
+    // Model-Class Mapping
     // 1) Annotaion Mapping
 
     // Mapping 해야할 테이블명
