@@ -5,10 +5,125 @@
     //var user = ViewData["T2"] as User;
 }
 
-@*<h1>@ViewBag.Test</h1>*@
+@*<h1>@ViewBag.User.UserName</h1>*@
 
 @*<h1>@ViewData["T2"]</h1>*@
 
 @*<h1>@user.UserName</h1>*@
 
-<h1>@Model.UserAge</h1>
+@*<h1>@Model.UserAge</h1>*@
+
+
+@* @기호 사용시 @기호 두번 쓰기 *@
+<h1>@@Hello World</h1>
+
+@{
+    var user = new User
+    {
+        UserNo = 1,
+        UserName = "홍길동"
+    };
+
+    var html = "<h1>Hello World!</h1>";
+}
+
+<h1>사용자 이름: @user.UserName</h1>
+
+
+<h1>@DateTime.Now 부터 @DateTime.Now.AddDays(7) 까지</h1>
+
+
+@* 태그 그대로 표현 *@
+
+@html
+
+@* 태그 표현 X (게시판 View) *@
+
+@Html.Raw(html)
+
+
+@* for/foreach 문 *@
+
+@{
+    for (var i = 0; i < 10; i++)
+    {
+        <h1>@i 번째</h1>
+    }
+}
+
+@{
+    var list = new List<string>
+{
+"1", "2", "3"
+};
+}
+
+@foreach (var no in list)
+{
+    <h1>@no</h1>
+}
+
+@{
+    var isCheck = false;
+}
+
+
+@* if 문 *@
+
+@if (isCheck)
+{
+    <h1>체크 완료</h1>
+}
+else
+{
+    <h1>체크 No</h1>
+}
+
+@{
+    var value = 89;
+}
+
+
+@* switch 문 *@
+
+@switch (value)
+{
+    case 1:
+        <h1>1번 선택</h1>
+        break;
+    case 2:
+        <h1>2번 선택</h1>
+        break;
+    case 3:
+        <h1>3번 선택</h1>
+        break;
+    default:
+        <h1>선택 No</h1>
+        break;
+}
+
+
+@* try ~ catch 문 *@
+
+@try
+{
+    <h1>Test 중</h1>
+
+    throw new Exception();
+
+}
+catch (Exception ex)
+{
+    <h1>오류 발생</h1>
+}
+
+@* 함수 *@
+
+@functions{
+    public int Plus(int a, int b)
+    {
+        return a + b;
+    }
+}
+
+<h1>@Plus(1, 2)</h1>

@@ -22,27 +22,32 @@ namespace AspnetCoreStudy2.Controllers
             // 1. ViewBag -> dymanic type(List, User, 숫자, true/false, 문자열)
             // - Controller에 정의가 안되어 있어도 View에 표시가 될 경우 오류가 발생하지 않는다.
 
-            //ViewBag.Test = "Hello Work, Test";
+            // ViewBag.User = "Hello World, Test";
 
             // [약한 형식의 데이터]
             // 2. ViewData[""]
-            // ViewData["T2"] = "Hello Work, T2";
+            // ViewData["T2"] = "Hello World, T2";
             // ViewData["T2"] = new User
             // {
             //    UserNo = 1, UserName ="홍길동"
             // };
 
+            //return View();
+
             // [강력한 형식의 데이터]
             // 3. ViewModel
 
+            /*
             var vm = new UserViewModel
             {
                 UserName = "홍길순",
                 UserAge = 25
             };
-
-            //return View();
+            
             return View(vm);
+            */
+
+            return View();
         }
 
         public IActionResult About()
