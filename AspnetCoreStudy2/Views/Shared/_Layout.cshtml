@@ -69,6 +69,8 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
+    @* required : false => 선택적 적용, true => 필수 적용 *@
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

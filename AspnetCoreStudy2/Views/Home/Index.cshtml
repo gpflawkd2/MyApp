@@ -53,9 +53,9 @@
 
 @{
     var list = new List<string>
-{
-"1", "2", "3"
-};
+    {
+    "1", "2", "3"
+    };
 }
 
 @foreach (var no in list)
@@ -63,12 +63,12 @@
     <h1>@no</h1>
 }
 
+
+@* if 문 *@
+
 @{
     var isCheck = false;
 }
-
-
-@* if 문 *@
 
 @if (isCheck)
 {
@@ -79,12 +79,12 @@ else
     <h1>체크 No</h1>
 }
 
+
+@* switch 문 *@
+
 @{
     var value = 89;
 }
-
-
-@* switch 문 *@
 
 @switch (value)
 {
@@ -127,3 +127,17 @@ catch (Exception ex)
 }
 
 <h1>@Plus(1, 2)</h1>
+
+@*
+    # Web App
+    site.js -> 100만줄
+    Index -> X, 30줄
+
+    ==> Layout section: JavaScript 소스를 분산화 시키고 싶을 때 사용
+*@
+
+@section Scripts{ 
+    <script>
+        alert("Hi!!");
+    </script>
+}
